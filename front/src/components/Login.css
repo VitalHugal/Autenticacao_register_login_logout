@@ -111,6 +111,7 @@ label {
 
 .container-items a span {
     color: var(--color2);
+    padding-left: 5px;
 }
 
 .container-items a:hover,
@@ -247,7 +248,7 @@ label {
             width: 120px;
         }
 
-        .container-items a{
+        .container-items a {
             font-size: 10px;
         }
     }
