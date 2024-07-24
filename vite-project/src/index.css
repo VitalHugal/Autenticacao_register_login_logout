@@ -1,0 +1,21 @@
+:root {
+    --color1: #205373;
+    --color2: #223440;
+    --color3: #4E8DA6;
+    --color4: #5BC2D9;
+    --color5: #BFA29B;
+    --color6: #0f0f0f;
+    --color7: #ebebeb;
+    --font: "Nunito";
+}
+
+* {
+    margin: 0px;
+    border: 0px;
+    box-sizing: border-box;
+    font-family: var(--font);
+}
+
+body{
+    background-color: var(--color1);
+}
