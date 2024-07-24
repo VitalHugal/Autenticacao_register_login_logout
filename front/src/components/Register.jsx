@@ -2,33 +2,42 @@ import React from 'react'
 
 import { Link } from 'react-router-dom'
 
+import "../components/Register.css"
+
 import Foto from "../assets/img/pexels-fauxels-3183183.jpg"
+import Button from "../assets/button/button.png";
 
-import "../components/Login.css"
-
-const Login = () => {
-
-    const handleSubmitLogin = (e) => {
+const Register = () => {
+    const handleSubmitRegister = (e) => {
         e.preventDefault();
-        console.log("2")
+        console.log('1')
     };
 
     return (
-        <div id='container' 
-        style={{
+        <div id='container' style={{
             backgroundImage: `url(${Foto})`,
             backgroundSize: "cover"
-        }}
-        >
+        }}>
             <div id='container-main'>
                 <div id='container-info' style={{
                     backgroundImage: `url(${Foto})`, backgroundRepeat: 'no-repeat',
                     backgroundSize: "cover"
                 }}>
-                    Entre ou registre-se
+                    Registre-se
                 </div>
                 <div id='container-form'>
                     <form >
+                        <div id='container-back'>
+                            <Link to="/"> <img src={Button} alt="botão de voltar" /></Link>
+                        </div>
+                        <div className='container-items'>
+                            <label htmlFor="">Nome:</label>
+                            <input type="text" name="name" id="name" placeholder='Digite seu nome' />
+                        </div>
+                        <div className='container-items'>
+                            <label htmlFor="">Sobrenome:</label>
+                            <input type="text" name="surname" id="surname" placeholder='Digite seu sobrenome' />
+                        </div>
                         <div className='container-items'>
                             <label htmlFor="">E-mail:</label>
                             <input type="email" name="email" id="email" placeholder='Digite seu e-mail' />
@@ -38,10 +47,7 @@ const Login = () => {
                             <input type="password" name="password" id="password" placeholder='Digite sua senha' />
                         </div>
                         <div className='container-items'>
-                            <button type="submit" onClick={(e) => handleSubmitLogin(e)} >Entrar</button>
-                        </div>
-                        <div className='container-items'>
-                            <Link to="/registre-se">Não tem conta ainda ? <span>Registre-se</span></Link>
+                            <button type="submit" onClick={(e) => handleSubmitRegister(e)}>Registrar</button>
                         </div>
                     </form>
                 </div>
@@ -50,4 +56,4 @@ const Login = () => {
     )
 }
 
-export default Login
+export default Register

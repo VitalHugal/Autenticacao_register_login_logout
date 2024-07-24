@@ -1,0 +1,254 @@
+:root {
+    --color1: #205373;
+    --color2: #223440;
+    --color3: #4e8da6;
+    --color4: #5BC2D9;
+    --color5: #BFA29B;
+    --color6: #0f0f0f;
+    --color7: #ebebeb;
+    --color8: #154bdf;
+    --font: "Nunito";
+}
+
+* {
+    margin: 0px;
+    border: 0px;
+    box-sizing: border-box;
+    font-family: var(--font);
+}
+
+#container {
+    width: 100%;
+    min-height: 100vh;
+}
+
+
+#container,
+#container-main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#container-main {
+    width: 100%;
+}
+
+#container-info {
+    display: flex;
+    align-items: center;
+    width: 280px;
+    height: 600px;
+    color: var(--color7);
+    font-size: 45px;
+    font-weight: 600;
+    padding: 0px 15px;
+}
+
+#container-form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 400px;
+    height: 600px;
+    background-color: var(--color3);
+}
+
+#container-form .container-items {
+    padding-bottom: 20px;
+}
+
+.container-items,
+label input {
+    display: flex;
+}
+
+.container-items,
+label {
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    color: var(--color7);
+    font-weight: bold;
+}
+
+::placeholder {
+    color: var(--color7);
+}
+
+.container-items input {
+    border: 2px solid var(--color4);
+    padding: 5px;
+    background-color: var(--color3);
+    border-radius: 5px;
+}
+
+.container-items button[type="submit"] {
+    border-radius: 20px;
+    font-weight: bold;
+    background-color: var(--color4);
+    font-size: 16px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    cursor: pointer;
+    color: var(--color2);
+}
+
+.container-items button[type="submit"]:hover {
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+
+.container-items a {
+    display: flex;
+    margin: 0 auto;
+    color: var(--color7);
+    text-decoration: none;
+    padding-top: 10px;
+
+}
+
+.container-items a span {
+    color: var(--color2);
+}
+
+.container-items a:hover,
+.container-items span:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 700px) {
+    #container-info {
+        width: 200px;
+        font-size: 35px;
+        padding: 0px 10px;
+    }
+
+    #container-form {
+        width: 320px;
+
+    }
+}
+
+@media (max-width: 550px) {
+    #container-info {
+        width: 160px;
+        height: 600px;
+        font-size: 28px;
+        font-weight: 600;
+        padding: 0px 10px;
+    }
+
+    #container-form {
+        width: 300px;
+        height: 600px;
+    }
+
+    .container-items,
+    label {
+        display: flex;
+        align-items: center;
+        font-size: 15px;
+        color: var(--color7);
+        font-weight: bold;
+    }
+
+    @media (max-width: 490px) {
+        #container-info {
+            width: 135px;
+            height: 600px;
+            font-size: 22px;
+            font-weight: 600;
+            padding: 0px 10px;
+        }
+
+        #container-form {
+            width: 235px;
+        }
+
+        .container-items,
+        label {
+            font-size: 12px;
+        }
+
+        .container-items input {
+            padding: 3px;
+        }
+
+        .container-items input {
+            width: 130px;
+        }
+
+        .container-items button[type="submit"] {
+            font-size: 14px;
+            padding-left: 8px;
+            padding-right: 8px;
+            padding-bottom: 3px;
+            padding-top: 3px;
+        }
+    }
+
+    @media (max-width: 380px) {
+        #container-info {
+            width: 100px;
+            height: 400px;
+            font-size: 18px;
+            font-weight: 600;
+            padding: 0px 5px;
+        }
+
+        #container-form {
+            width: 225px;
+            height: 400px;
+        }
+
+        .container-items,
+        label {
+            font-size: 12px;
+        }
+
+        .container-items input {
+            padding: 1px;
+        }
+
+        .container-items input {
+            width: 130px;
+        }
+
+        .container-items button[type="submit"] {
+            font-size: 14px;
+            padding-left: 8px;
+            padding-right: 8px;
+            padding-bottom: 3px;
+            padding-top: 3px;
+        }
+    }
+
+    @media(max-width: 330px) {
+        #container-form {
+            width: 200px;
+            height: 350px;
+        }
+
+        #container-info {
+            height: 350px;
+        }
+
+        .container-items {
+            padding: 0 12px;
+        }
+
+        .container-items input::placeholder {
+            font-size: 11px;
+        }
+
+        .container-items input {
+            width: 120px;
+        }
+
+        .container-items a{
+            font-size: 10px;
+        }
+    }
+}
