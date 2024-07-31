@@ -6,6 +6,8 @@
     --color5: #BFA29B;
     --color6: #0f0f0f;
     --color7: #ebebeb;
+    --color8: #367356;
+    --color9: #60BF81;
     --font: "Nunito";
 }
 
@@ -21,7 +23,24 @@
 }
 
 #container-form #container-back {
-    margin-bottom: 60px;
+    margin-bottom: 30px;
+}
+
+#container-form .message {
+    color: var(--color7);
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.message p{
+    border: 1px solid var(--color9);
+    border-radius: 5px;
+    padding: 5px;
+    background-color: var(--color8);
+}
+
+#container-form .hide{
+    display: none;
 }
 
 .container-items,

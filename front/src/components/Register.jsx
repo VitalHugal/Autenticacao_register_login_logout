@@ -7,30 +7,52 @@ import "../components/Register.css"
 
 import Foto from "../assets/img/pexels-fauxels-3183183.jpg"
 import Button from "../assets/button/button.png";
+import api from "../axios/config";
 
 const Register = () => {
 
-    const navigate = useNavigate()
+    const navigate = useNavigate();
 
-    const [name, setName] = useState()
-    const [surname, setSurname] = useState()
-    const [email, setEmail] = useState()
-    const [password, setPassword] = useState()
+    const [name, setName] = useState('');
+    const [surname, setSurname] = useState('');
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
 
-    const createUser = async(e) => {
-        e.preventDefault()
+    const [successMessage, setSuccessMessage] = useState('');
+    const [errorMessage, setErrorMessage] = useState('');
 
-        const post = {name, surname, email, password}
+    const createUser = async (e) => {
+        e.preventDefault();
+
+        console.log(name, surname, email, password);
+
+        const post = { name, surname, email, password };
 
         try {
-            const response = await baseURL.post('/register',);
-            console.log('User registered:', response.data);
+            const response = await api.post('/register', post);
+            successMessage(`Cadastrado com sucesso - id:${response.data.success.id}`)
         } catch (error) {
-            console.error('Error registering user:', error);
+
+            if (name === '') {
+                console.error('Erro ao cadastrar:', error.response.data.message)
+            }
+            else if (surname === '') {
+                console.error('Erro ao cadastrar:', error.response.data.message)
+            }
+            else if (email === "") {
+                console.error('Erro ao cadastrar:', error.response.data.message)
+            }
+            else {
+                password === "" || password < 8
+                console.error('Erro ao cadastrar:', error.response.data.message)
+            }
         }
 
-        navigate("/")
-    }
+        if (createUser === true) {
+
+
+        }
+    };
 
     // const [name, setName] = useState([])
 
@@ -68,24 +90,27 @@ const Register = () => {
                 </div>
                 <div id='container-form'>
                     <form onSubmit={(e) => createUser(e)}>
+                        <div className="message hide">
+                            {successMessage && <p>{successMessage}</p>}
+                        </div>
                         <div id='container-back'>
                             <Link to="/"> <img src={Button} alt="botão de voltar" /></Link>
                         </div>
                         <div className='container-items'>
                             <label htmlFor="">Nome:</label>
-                            <input type="text" name="name" id="name" placeholder='Digite seu nome' onChange={(e) => setName(e.target.value)}/>
+                            <input type="text" name="name" id="name" placeholder='Digite seu nome' onChange={(e) => setName(e.target.value)} />
                         </div>
                         <div className='container-items'>
                             <label htmlFor="">Sobrenome:</label>
-                            <input type="text" name="surname" id="surname" placeholder='Digite seu sobrenome' onChange={(e) => setSurname(e.target.value)}/>
+                            <input type="text" name="surname" id="surname" placeholder='Digite seu sobrenome' onChange={(e) => setSurname(e.target.value)} />
                         </div>
                         <div className='container-items'>
                             <label htmlFor="">E-mail:</label>
-                            <input type="email" name="email" id="email" placeholder='Digite seu e-mail' onChange={(e) => setEmail(e.target.value)}/>
+                            <input type="email" name="email" id="email" placeholder='Digite seu e-mail' onChange={(e) => setEmail(e.target.value)} />
                         </div>
                         <div className='container-items'>
                             <label htmlFor="">Senha:</label>
-                            <input type="password" name="password" id="password" placeholder='Digite sua senha' onChange={(e) => setPassword(e.target.value)}/>
+                            <input type="password" name="password" id="password" placeholder='Digite sua senha' onChange={(e) => setPassword(e.target.value)} />
                         </div>
                         <div className='container-items'>
                             <button type="submit">Registrar</button>
