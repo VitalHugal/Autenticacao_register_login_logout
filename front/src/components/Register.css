@@ -6,8 +6,10 @@
     --color5: #BFA29B;
     --color6: #0f0f0f;
     --color7: #ebebeb;
-    --color8: #367356;
+    --color8: #367356b6;
     --color9: #60BF81;
+    --color10: #de04218c;
+    --color11: #a50319;
     --font: "Nunito";
 }
 
@@ -26,22 +28,22 @@
     margin-bottom: 30px;
 }
 
-#container-form .message {
+#container-form .message-success {
     color: var(--color7);
     text-align: center;
     margin-bottom: 20px;
 }
 
-.message p{
+.message-success p{
     border: 1px solid var(--color9);
     border-radius: 5px;
     padding: 5px;
     background-color: var(--color8);
 }
 
-#container-form .hide{
-    display: none;
-}
+#container-form .hide-success{
+    
+} 
 
 .container-items,
 label input {

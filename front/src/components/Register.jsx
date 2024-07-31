@@ -11,6 +11,8 @@ import api from "../axios/config";
 
 const Register = () => {
 
+    const messageSuccessComponent = document.querySelector(".hide-success");
+
     const navigate = useNavigate();
 
     const [name, setName] = useState('');
@@ -19,7 +21,6 @@ const Register = () => {
     const [password, setPassword] = useState('');
 
     const [successMessage, setSuccessMessage] = useState('');
-    const [errorMessage, setErrorMessage] = useState('');
 
     const createUser = async (e) => {
         e.preventDefault();
@@ -30,27 +31,24 @@ const Register = () => {
 
         try {
             const response = await api.post('/register', post);
-            successMessage(`Cadastrado com sucesso - id:${response.data.success.id}`)
+            setSuccessMessage(`Cadastrado com sucesso - id:${response.data.success.id}`);
+            console.log("cadastrou")
+
         } catch (error) {
 
             if (name === '') {
-                console.error('Erro ao cadastrar:', error.response.data.message)
+                console.error('Erro ao cadastrar:', error)
             }
             else if (surname === '') {
-                console.error('Erro ao cadastrar:', error.response.data.message)
+                console.error('Erro ao cadastrar:', error)
             }
             else if (email === "") {
-                console.error('Erro ao cadastrar:', error.response.data.message)
+                console.error('Erro ao cadastrar:', error)
             }
             else {
-                password === "" || password < 8
-                console.error('Erro ao cadastrar:', error.response.data.message)
+                (password === "" || password < 8)
+                console.error('Erro ao cadastrar:', error)
             }
-        }
-
-        if (createUser === true) {
-
-
         }
     };
 
@@ -90,7 +88,7 @@ const Register = () => {
                 </div>
                 <div id='container-form'>
                     <form onSubmit={(e) => createUser(e)}>
-                        <div className="message hide">
+                        <div className="message-success hide-success">
                             {successMessage && <p>{successMessage}</p>}
                         </div>
                         <div id='container-back'>
