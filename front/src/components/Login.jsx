@@ -1,5 +1,3 @@
-import baseURL from "axios"
-
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom'
 
@@ -10,13 +8,15 @@ import "../components/Login.css"
 
 const Login = () => {
 
+    // iniciando a navigate
     const navigate = useNavigate();
 
+    // iniciando os atributos
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-
     const [errorMessage, setErrorMessage] = useState('');
 
+    
     const login = async (e) => {
         e.preventDefault();
 
@@ -26,6 +26,10 @@ const Login = () => {
             const response = await api.post('/login', post);
             const token = response.data.success;
             console.log(token);
+
+            // Salvar o token no localStorage
+            localStorage.setItem('token', token);
+            navigate("/home");
 
         } catch (error) {
             if (error.response && error.response.data && error.response.data.errors) {

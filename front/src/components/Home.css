@@ -25,7 +25,22 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 50%;
-    font-size: 100px;
+    margin-top: 100%;
+    font-size: 50px;
 }
 
+@media (max-width: 570px){
+    #home{
+        font-size: 40px;
+    }
+}
+@media (max-width: 450px){
+    #home{
+        font-size: 30px;
+    }
+}
+@media (max-width: 340px){
+    #home{
+        font-size: 20px;
+    }
+}

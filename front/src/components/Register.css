@@ -28,13 +28,16 @@
     margin-bottom: 30px;
 }
 
-#container-form .message-success,.message-error {
+#container-form .message-success,
+.message-error {
+    display: flex;
+    flex-direction: column;
     color: var(--color7);
     text-align: center;
     margin-bottom: 20px;
 }
 
-.message-error p{
+.message-error p {
     border: 1px solid var(--color11);
     border-radius: 5px;
     padding: 5px;
@@ -42,7 +45,7 @@
     margin-bottom: 5px;
 }
 
-.message-success p{
+.message-success p {
     border: 1px solid var(--color9);
     border-radius: 5px;
     padding: 5px;
@@ -76,12 +79,20 @@ label input {
 }
 
 @media (max-width: 550px) {
+
     #container-info {
         font-size: 25px;
     }
 }
 
 @media (max-width: 490px) {
+
+    .message-success,
+    .message-error {
+        width: 100%;
+        font-size: 12px;
+    }
+
     #container-info {
         font-size: 20px;
     }
@@ -92,19 +103,66 @@ label input {
 }
 
 @media (max-width:380px) {
+    .container-items button[type="submit"] {
+        margin-top: 0px;
+    }
+
+    #container-form #container-back {
+        margin-bottom: 15px;
+    }
+
+    .message-success,
+    .message-error {
+        width: 100%;
+        font-size: 12px;
+    }
+
+    .message-error p {
+        padding: 2.5px;
+    }
+
     #container-info {
         font-size: 15px;
     }
 }
 
 @media (max-width: 330px) {
-    #container-form{
-        width: 205px;
+    .container-items button[type="submit"] {
+        margin-top: -5px;
+        font-size: 11px;
+    }
+
+    #container-form #container-back {
+        margin-bottom: 5px;
+        margin-top: -10px;
+    }
+
+    .message-success,
+    .message-error {
+        width: 100%;
+        font-size: 11px;
+    }
+
+    .message-error p {
+        padding: 0.5px;
+    }
+
+    #container-form {
+        width: 210px;
     }
 
     #container-info {
-        width: 80px;
+        width: 79px;
         font-size: 13px;
+    }
+
+    .container-items,
+    label input {
+        padding-bottom: 10px;
+    }
+    
+    .container-items button {
+        margin: 0 auto;
     }
 
     .container-items input {
