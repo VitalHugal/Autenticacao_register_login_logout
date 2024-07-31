@@ -11,8 +11,6 @@ import api from "../axios/config";
 
 const Register = () => {
 
-    const messageSuccessComponent = document.querySelector(".hide-success");
-
     const navigate = useNavigate();
 
     const [name, setName] = useState('');
@@ -21,6 +19,7 @@ const Register = () => {
     const [password, setPassword] = useState('');
 
     const [successMessage, setSuccessMessage] = useState('');
+    const [errorMessage, setErrorMessage] = useState('');
 
     const createUser = async (e) => {
         e.preventDefault();
@@ -35,19 +34,12 @@ const Register = () => {
             console.log("cadastrou")
 
         } catch (error) {
-
-            if (name === '') {
-                console.error('Erro ao cadastrar:', error)
-            }
-            else if (surname === '') {
-                console.error('Erro ao cadastrar:', error)
-            }
-            else if (email === "") {
-                console.error('Erro ao cadastrar:', error)
-            }
-            else {
-                (password === "" || password < 8)
-                console.error('Erro ao cadastrar:', error)
+            if (error.response && error.response.data && error.response.data.errors) {
+                const errors = error.response.data.errors;
+                console.error('Erro ao cadastrar:', errors);
+                setErrorMessage(errors);
+            } else {
+                console.error('Erro desconhecido:', error);
             }
         }
     };
@@ -88,8 +80,14 @@ const Register = () => {
                 </div>
                 <div id='container-form'>
                     <form onSubmit={(e) => createUser(e)}>
-                        <div className="message-success hide-success">
+                        <div className="message-success">
                             {successMessage && <p>{successMessage}</p>}
+                        </div>
+                        <div className="message-error">
+                            {errorMessage.name && <p>{errorMessage.name.join(', ')}</p>}
+                            {errorMessage.surname && <p>{errorMessage.surname.join(', ')}</p>}
+                            {errorMessage.email && <p>{errorMessage.email.join(', ')}</p>}
+                            {errorMessage.password && <p>{errorMessage.password.join(', ')}</p>}
                         </div>
                         <div id='container-back'>
                             <Link to="/"> <img src={Button} alt="botão de voltar" /></Link>

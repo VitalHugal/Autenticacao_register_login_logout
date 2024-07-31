@@ -2,6 +2,7 @@ import baseURL from "axios"
 
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom'
+import api from "../axios/config";
 
 import Foto from "../assets/img/pexels-fauxels-3183183.jpg"
 
@@ -14,6 +15,8 @@ const Login = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
+    const [errorMessage, setErrorMessage] = useState('');
+
     const login = async (e) => {
         e.preventDefault();
 
@@ -21,15 +24,15 @@ const Login = () => {
 
         try {
             const response = await api.post('/login', post);
-            console.log("bem vindo")
+            const token = response.data.success
+            console.log(token)
         } catch (error) {
-
-            if (email === "") {
-                console.error('Erro ao cadastrar:', error.response.data.message)
-            }
-            else {
-                password === "" || password < 8
-                console.error('Erro ao cadastrar:', error.response.data.message)
+            if (error.response && error.response.data && error.response.data.errors) {
+                const errors = error.response.data.errors;
+                console.error('Erro ao entrar:', errors);
+                setErrorMessage(errors);
+            } else {
+                console.error('Erro desconhecido:', error);
             }
         }
     };
@@ -50,6 +53,11 @@ const Login = () => {
                 </div>
                 <div id='container-form'>
                     <form onSubmit={(e) => login(e)}>
+                        <div className="message-error">
+                            <p>ihjsdfi</p>
+                            {errorMessage.email && <p>{errorMessage.email.join(', ')}</p>}
+                            {errorMessage.password && <p>{errorMessage.password.join(', ')}</p>}
+                        </div>
                         <div className='container-items'>
                             <label htmlFor="">E-mail:</label>
                             <input type="email" name="email" id="email" placeholder='Digite seu e-mail' onChange={(e) => setEmail(e.target.value)} />

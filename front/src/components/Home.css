@@ -1,0 +1,31 @@
+:root {
+    --color1: #205373;
+    --color2: #223440;
+    --color3: #4E8DA6;
+    --color4: #5BC2D9;
+    --color5: #BFA29B;
+    --color6: #0f0f0f;
+    --color7: #ebebeb;
+    --color8: #367356b6;
+    --color9: #60BF81;
+    --color10: #de04218c;
+    --color11: #a50319;
+    --font: "Nunito";
+}
+
+* {
+    margin: 0px;
+    border: 0px;
+    box-sizing: border-box;
+    font-family: var(--font);
+}
+
+#home{
+    color: var(--color7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50%;
+    font-size: 100px;
+}
+
