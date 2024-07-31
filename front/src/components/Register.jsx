@@ -24,22 +24,22 @@ const Register = () => {
     const createUser = async (e) => {
         e.preventDefault();
 
-        console.log(name, surname, email, password);
+        // console.log(name, surname, email, password);
 
         const post = { name, surname, email, password };
 
         try {
             const response = await api.post('/register', post);
             setSuccessMessage(`Cadastrado com sucesso - id:${response.data.success.id}`);
-            console.log("cadastrou")
+            // console.log("cadastrou")
 
         } catch (error) {
             if (error.response && error.response.data && error.response.data.errors) {
                 const errors = error.response.data.errors;
-                console.error('Erro ao cadastrar:', errors);
+                // console.error('Erro ao cadastrar:', errors);
                 setErrorMessage(errors);
             } else {
-                console.error('Erro desconhecido:', error);
+                // console.error('Erro desconhecido:', error);
             }
         }
     };

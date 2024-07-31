@@ -2,9 +2,9 @@ import baseURL from "axios"
 
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom'
-import api from "../axios/config";
 
 import Foto from "../assets/img/pexels-fauxels-3183183.jpg"
+import api from "../axios/config";
 
 import "../components/Login.css"
 
@@ -24,8 +24,9 @@ const Login = () => {
 
         try {
             const response = await api.post('/login', post);
-            const token = response.data.success
-            console.log(token)
+            const token = response.data.success;
+            console.log(token);
+
         } catch (error) {
             if (error.response && error.response.data && error.response.data.errors) {
                 const errors = error.response.data.errors;
@@ -40,21 +41,17 @@ const Login = () => {
     return (
         <div id='container'
             style={{
-                backgroundImage: `url(${Foto})`,
-                backgroundSize: "cover"
-            }}
-        >
+                backgroundImage: `url(${Foto})`, backgroundSize: "cover"
+            }}>
             <div id='container-main'>
                 <div id='container-info' style={{
-                    backgroundImage: `url(${Foto})`, backgroundRepeat: 'no-repeat',
-                    backgroundSize: "cover"
+                    backgroundImage: `url(${Foto})`, backgroundRepeat: 'no-repeat', backgroundSize: "cover"
                 }}>
                     Entre ou registre-se
                 </div>
                 <div id='container-form'>
                     <form onSubmit={(e) => login(e)}>
                         <div className="message-error">
-                            <p>ihjsdfi</p>
                             {errorMessage.email && <p>{errorMessage.email.join(', ')}</p>}
                             {errorMessage.password && <p>{errorMessage.password.join(', ')}</p>}
                         </div>

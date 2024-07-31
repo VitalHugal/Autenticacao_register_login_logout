@@ -54,13 +54,13 @@
     background-color: var(--color3);
 }
 
-#container-form .message-error {
+#container-form .message-error{
     color: var(--color7);
     text-align: center;
     margin-bottom: 20px;
 }
 
-.message-error p{
+.message-error p {
     border: 1px solid var(--color11);
     border-radius: 5px;
     padding: 5px;
