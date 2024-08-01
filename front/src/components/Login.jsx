@@ -5,24 +5,31 @@ import api from "../axios/config";
 import "../components/Login.css";
 
 const Login = () => {
+
     const navigate = useNavigate();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [errorMessage, setErrorMessage] = useState('');
 
+    // limpar mensagem de erro
+    const clearErrorMessages = () => {
+        setErrorMessage('');
+    };
+
     const login = async (e) => {
         e.preventDefault();
+
         const post = { email, password };
 
         try {
             const response = await api.post('/login', post);
             const token = response.data.success;
-            // console.log(token);
-
             // Salvar o token no localStorage
             localStorage.setItem('token', token);
             navigate("/home");
-        } catch (error) {
+        }
+
+        catch (error) {
             const errors = error.response.data.errors;
             setErrorMessage(errors);
         }
@@ -41,11 +48,11 @@ const Login = () => {
                         </div>
                         <div className='container-items'>
                             <label htmlFor="email">E-mail:</label>
-                            <input type="email" name="email" id="email" placeholder='Digite seu e-mail' onChange={(e) => setEmail(e.target.value)} />
+                            <input type="email" name="email" id="email" placeholder='Digite seu e-mail' onChange={(e) => { setEmail(e.target.value); clearErrorMessages(); }} />
                         </div>
                         <div className='container-items'>
                             <label htmlFor="password">Senha:</label>
-                            <input type="password" name="password" id="password" placeholder='Digite sua senha' onChange={(e) => setPassword(e.target.value)} />
+                            <input type="password" name="password" id="password" placeholder='Digite sua senha' onChange={(e) => { setPassword(e.target.value); clearErrorMessages(); }} />
                         </div>
                         <div className='container-items'>
                             <button type="submit">Entrar</button>
