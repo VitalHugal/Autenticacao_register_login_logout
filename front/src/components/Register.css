@@ -166,11 +166,6 @@ label input {
         font-size: 13px;
     }
 
-    .container-items,
-    label input {
-        padding-bottom: 10px;
-    }
-
     .container-items button {
         margin: 0 auto;
     }
