@@ -15,7 +15,3 @@
     box-sizing: border-box;
     font-family: var(--font);
 }
-
-body{
-    background-color: var(--color1);
-}
