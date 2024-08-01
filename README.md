@@ -1,12 +1,5 @@
  # TELA DE LOGIN COM AUTENTICAÇÃO - LARAVEL E REACT
 
- ![Exemplo de Interface](front-end/src/assets/imgProject/img1.jpeg)
- ![Exemplo de Interface](front-end/src/assets/imgProject/img2.jpeg)
- ![Exemplo de Interface](front-end/src/assets/imgProject/img3.jpeg)
- ![Exemplo de Interface](front-end/src/assets/imgProject/img4.jpeg)
- ![Exemplo de Interface](front-end/src/assets/imgProject/img5.jpeg)
- ![Exemplo de Interface](front-end/src/assets/imgProject/img6.jpeg)
-
 ## - Descrição do Projeto
   
 Este projeto foi desenvolvido com a finalidade de aprendizado e visa integrar uma aplicação front-end em React com uma API back-end desenvolvida em Laravel. O objetivo é criar uma plataforma funcional que pode ser usada como base para futuros aprimoramentos e implementação de novas funcionalidades.
@@ -30,3 +23,12 @@ Autenticação de Usuário: Implementação de login e logout com armazenamento 
 Registro de Usuário: Formulário para novos usuários se registrarem na plataforma.
 
 Proteção de Rotas: Garantia de que apenas usuários autenticados possam acessar certas páginas da aplicação.
+
+# ALGUMAS IMAGENS DO PROJETO
+
+![Exemplo de Interface](front-end/src/assets/imgProject/img1.jpeg)
+![Exemplo de Interface](front-end/src/assets/imgProject/img2.jpeg)
+![Exemplo de Interface](front-end/src/assets/imgProject/img3.jpeg)
+![Exemplo de Interface](front-end/src/assets/imgProject/img4.jpeg)
+![Exemplo de Interface](front-end/src/assets/imgProject/img5.jpeg)
+![Exemplo de Interface](front-end/src/assets/imgProject/img6.jpeg)
