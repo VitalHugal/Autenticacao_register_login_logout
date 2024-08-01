@@ -14,6 +14,7 @@ const Home = () => {
       try {
         const response = await api.get('/home');
         setData(response.data);
+        console.log("cheguei")
       } catch (error) {
         console.error('Erro ao buscar dados:', error);
         setError('Erro ao buscar dados.');
