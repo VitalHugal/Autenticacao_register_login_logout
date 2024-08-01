@@ -17,7 +17,7 @@ const Login = () => {
         try {
             const response = await api.post('/login', post);
             const token = response.data.success;
-            console.log(token);
+            // console.log(token);
 
             // Salvar o token no localStorage
             localStorage.setItem('token', token);

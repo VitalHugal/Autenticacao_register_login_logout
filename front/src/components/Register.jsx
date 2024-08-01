@@ -38,7 +38,7 @@ const Register = () => {
                 const errors = error.response.data.errors;
                 setErrorMessage(errors);
             } else {
-                console.error('Erro desconhecido:', error);
+               // console.error('Erro desconhecido:', error);
             }
         }
     };

@@ -11,33 +11,47 @@ const Home = () => {
 
   const navigate = useNavigate();
 
+  // se clicar no botao de sair, sai excluiu o token e retorna para "/"  
   const logout = async () => {
     try {
       const response = await api.post('/logout');
-      console.log("Logout successful");
+      // console.log("Logout successful");
       localStorage.removeItem('token');
       navigate('/');
 
     } catch (error) {
-      console.log(error);
+      // console.log(error);
     }
 
   }
 
   useEffect(() => {
-    const fetchData = async () => {
+
+    // verifica se tem token na requisição senão retorna para "/"
+    const axiosData = async () => {
+      const token = localStorage.getItem('token');
+      if (!token) {
+        navigate('/');
+        return;
+      }
+
       try {
         const response = await api.get('/home');
         setData(response.data);
-        console.log("cheguei")
+
       } catch (error) {
-        console.error('Erro ao buscar dados:', error);
+        // console.error('Erro ao buscar dados:', error);
         setError('Erro ao buscar dados.');
+        if (error.response && error.response.status === 401) {
+          // Token inválido ou expirado, redirecionar para login
+          localStorage.removeItem('token');
+          navigate('/');
+        }
       }
     };
 
-    fetchData();
-  }, []);
+    axiosData();
+  }, [navigate]);
 
   return (
     <div>
@@ -54,10 +68,8 @@ const Home = () => {
           <div>
             <h1>Bem-vindo !</h1>
             {/* Renderizar os dados obtidos */}
-          </div>
-        ) : (
-          <p>Carregando...</p>
-        )}
+          </div> 
+        ) : (<p>Carregando...</p>)}
       </div>
     </div>
   );
