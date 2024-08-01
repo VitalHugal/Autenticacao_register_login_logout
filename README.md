@@ -1,6 +1,11 @@
  # TELA DE LOGIN COM AUTENTICAÇÃO - LARAVEL E REACT
 
  ![Exemplo de Interface](assets/imgProject/img1.jpeg)
+ ![Exemplo de Interface](assets/imgProject/img2.jpeg)
+ ![Exemplo de Interface](assets/imgProject/img3.jpeg)
+ ![Exemplo de Interface](assets/imgProject/img4.jpeg)
+ ![Exemplo de Interface](assets/imgProject/img5.jpeg)
+ ![Exemplo de Interface](assets/imgProject/img6.jpeg)
 
 ## - Descrição do Projeto
   
