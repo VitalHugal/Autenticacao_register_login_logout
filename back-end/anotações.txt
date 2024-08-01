@@ -1,0 +1,7 @@
+ANOTAÇÕES Laravel
+
+- Para iniciar um projeto;
+composer create-project laravel/laravel:^11.0
+
+- Intalar API;
+php artisan install:api
