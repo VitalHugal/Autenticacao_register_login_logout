@@ -1,5 +1,7 @@
  # TELA DE LOGIN COM AUTENTICAÇÃO - LARAVEL E REACT
 
+ ![Exemplo de Interface](assets/imgProject/img1.jpeg)
+
 ## - Descrição do Projeto
   
 Este projeto foi desenvolvido com a finalidade de aprendizado e visa integrar uma aplicação front-end em React com uma API back-end desenvolvida em Laravel. O objetivo é criar uma plataforma funcional que pode ser usada como base para futuros aprimoramentos e implementação de novas funcionalidades.
