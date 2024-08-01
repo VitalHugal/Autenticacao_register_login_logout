@@ -36,10 +36,9 @@ const Register = () => {
         } catch (error) {
             if (error.response && error.response.data && error.response.data.errors) {
                 const errors = error.response.data.errors;
-                // console.error('Erro ao cadastrar:', errors);
                 setErrorMessage(errors);
             } else {
-                // console.error('Erro desconhecido:', error);
+                console.error('Erro desconhecido:', error);
             }
         }
     };
