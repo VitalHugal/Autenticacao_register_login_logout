@@ -29,4 +29,4 @@ Proteção de Rotas: Garantia de que apenas usuários autenticados possam acessa
 ![Exemplo de Interface](front-end/src/assets/imgProject/img1.jpeg)
 ![Exemplo de Interface](front-end/src/assets/imgProject/img2.jpeg)
 ![Exemplo de Interface](front-end/src/assets/imgProject/img3.jpeg)
-![Exemplo de Interface](front-end/src/assets/imgProject/img4.jpeg)
+![Exemplo de Interface](front-end/src/assets/imgProject/img5.jpeg)
